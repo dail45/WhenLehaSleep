@@ -13,7 +13,7 @@ def hello_world():
     deltadt = now - support
     delta = int(deltadt.days) % 4 + 1
     timeit = f"{H}:{M} {d}:{m}:{Y}"
-    H = int(H)
+    H = int(H) + 3
     if delta == 1:
         if 8 <= H <= 20:
             status = "Лёха на дневной.\n" + timeit + "\nstatus = Дневной"
