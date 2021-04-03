@@ -7,13 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    now = datetime.datetime.now()
+    now = datetime.datetime.now() + datetime.timedelta(hours=3)
     support = datetime.datetime.strptime("01:04:2021", "%d:%m:%Y")
     Y, m, d, H, M = now.strftime("%Y:%m:%d:%H:%M").split(":")
     deltadt = now - support
     delta = int(deltadt.days) % 4 + 1
     timeit = f"{H}:{M} {d}:{m}:{Y}"
-    H = int(H) + 3
+    H = int(H)
     if delta == 1:
         if 8 <= H <= 20:
             status = "Лёха на дневной.\n" + timeit + "\nstatus = Дневной"
@@ -41,4 +41,5 @@ def hello_world():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+
 
