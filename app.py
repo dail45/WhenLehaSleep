@@ -15,11 +15,11 @@ def hello_world():
     timeit = f"{H}:{M} {d}:{m}:{Y}"
     H = int(H)
     if delta == 1:
-        if 8 <= H <= 20:
+        if 8 <= H < 20:
             status = "Лёха на дневной.\n" + timeit + "\nstatus = Дневной"
         elif H < 8:
             status = "Лёха спит.\n" + timeit + "\nstatus = Дневной"
-        elif 20 < H <= 21:
+        elif 20 <= H < 21:
             status = "Лёха спешит домой.\n" + timeit + "\nstatus = Дневной"
         elif H >= 21:
             status = "Лёха дома.\n" + timeit + "\nstatus = Дневной"
