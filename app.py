@@ -19,7 +19,7 @@ def hello_world():
             status = "Лёха на дневной.\n" + timeit + "\nstatus = Дневной"
         elif H < 8:
             status = "Лёха спит.\n" + timeit + "\nstatus = Дневной"
-        elif 20 < H < 21:
+        elif 20 < H <= 21:
             status = "Лёха спешит домой.\n" + timeit + "\nstatus = Дневной"
         elif H >= 21:
             status = "Лёха дома.\n" + timeit + "\nstatus = Дневной"
