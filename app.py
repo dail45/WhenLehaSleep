@@ -6,7 +6,7 @@ import requests
 app = Flask(__name__)
 
 
-@app.route('/when/')
+@app.route('/')
 def hello_world():
     now = datetime.datetime.now() + datetime.timedelta(hours=3)
     support = datetime.datetime.strptime("01:04:2021", "%d:%m:%Y")
