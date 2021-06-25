@@ -42,7 +42,7 @@ def hello_world():
 @app.route('/url/<HTTP>/<HOST>/<LINK>')
 def image_return(HTTP, HOST, LINK):
     url = f"{HTTP}://{HOST}/{LINK}"
-    redirect(url)
+    return redirect(url)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
