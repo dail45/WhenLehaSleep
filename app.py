@@ -41,7 +41,11 @@ def hello_world():
 
 @app.route('/url/<URL>')
 def image_return(URL):
-    return requests.get(URL)
+    res requests.get(URL)
+    if res:
+        return res
+    else:
+        return "Invalid Answer"
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
