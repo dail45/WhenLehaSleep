@@ -41,6 +41,8 @@ def hello_world():
 
 @app.route('/url/<URL>')
 def image_return(URL):
+    if not URL:
+        return "Invalid URL"
     res requests.get(URL)
     if res:
         return res
