@@ -39,11 +39,9 @@ def hello_world():
     return status
 
 
-@app.route('/url/<URL>')
-def image_return(URL):
-    if not URL:
-        return "Invalid URL"
-    res = requests.get(URL)
+@app.route('/url/<HTTP>/<HOST>/<LINK>')
+def image_return(HTTP, HOST, LINK):
+    res = requests.get(f"{HTTP}://{HOST>/{LINK}")
     if res:
         return res
     else:
