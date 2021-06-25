@@ -1,11 +1,12 @@
 from flask import Flask
 import datetime
 import os
+import requests
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/when/')
 def hello_world():
     now = datetime.datetime.now() + datetime.timedelta(hours=3)
     support = datetime.datetime.strptime("01:04:2021", "%d:%m:%Y")
@@ -37,6 +38,10 @@ def hello_world():
         status = "Лёха дома.\n" + timeit + "\nstatus = Выходной"
     return status
 
+
+@app.route('/url/<URL>')
+def image_return(URL):
+    return requests.get(URL)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
