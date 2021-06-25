@@ -41,7 +41,7 @@ def hello_world():
 
 @app.route('/url/<HTTP>/<HOST>/<LINK>')
 def image_return(HTTP, HOST, LINK):
-    res = requests.get(f"{HTTP}://{HOST>/{LINK}")
+    res = requests.get(f"{HTTP}://{HOST}/{LINK}")
     if res:
         return res
     else:
