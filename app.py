@@ -3,6 +3,9 @@ import datetime
 import os
 import requests
 
+from getcontact.getcontact import GetContactAPI
+from getcontact.config import config
+
 app = Flask(__name__)
 
 
@@ -43,6 +46,11 @@ def hello_world():
 def image_return(HTTP, HOST, LINK):
     url = f"{HTTP}://{HOST}/{LINK}"
     return redirect(url)
+
+
+@app.route('/gct/<number>')
+def gtc_search(number):
+    return getcontact.print_information_by_phone(phone)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
