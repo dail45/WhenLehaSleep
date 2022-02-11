@@ -17,26 +17,35 @@ def hello_world():
     H = int(H)
     if delta == 1:
         if 8 <= H < 20:
-            status = "Лёха на дневной.\n" + timeit + "\nstatus = Дневной"
+            status = "Лёха на дневной.<br>" + timeit + "<br>status = Дневной"
         elif H < 8:
-            status = "Лёха спит.\n" + timeit + "\nstatus = Дневной"
+            status = "Лёха спит.<br>" + timeit + "<br>status = Дневной"
         elif 20 <= H < 21:
-            status = "Лёха спешит домой.\n" + timeit + "\nstatus = Дневной"
+            status = "Лёха спешит домой.<br>" + timeit + "<br>status = Дневной"
         elif H >= 21:
-            status = "Лёха дома.\n" + timeit + "\nstatus = Дневной"
+            status = "Лёха дома.<br>" + timeit + "<br>status = Дневной"
     elif delta == 2:
         if H < 19:
-            status = "Лёха дома.\n" + timeit + "\nstatus = Ночная"
+            status = "Лёха дома.<br>" + timeit + "<br>status = Ночная"
         if H >= 19:
-            status = "Лёха на ночной.\n" + timeit + "\nstatus = Ночная"
+            status = "Лёха на ночной.<br>" + timeit + "<br>status = Ночная"
     elif delta == 3:
         if H <= 8:
-            status = "Лёха на ночной.\n" + timeit + "\nstatus = Отсыпной"
+            status = "Лёха на ночной.<br>" + timeit + "<br>status = Отсыпной"
         elif H > 8:
-            status = "Лёха спит(дома).\n" + timeit + "\nstatus = Отсыпной"
+            status = "Лёха спит(дома).<br>" + timeit + "<br>status = Отсыпной"
     elif delta == 4:
-        status = "Лёха дома.\n" + timeit + "\nstatus = Выходной"
-    return " " + status + " "
+        status = "Лёха дома.<br>" + timeit + "<br>status = Выходной"
+    return f"""<html>
+<head>
+    <title>WhenLehaSleep</title>
+</head>
+<body>
+<h1 align="Center">
+    {status}
+</h1>
+</body>
+</html>"""
 
 
 if __name__ == '__main__':
