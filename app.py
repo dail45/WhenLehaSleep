@@ -36,7 +36,7 @@ def hello_world():
             status = "Лёха спит(дома).\n" + timeit + "\nstatus = Отсыпной"
     elif delta == 4:
         status = "Лёха дома.\n" + timeit + "\nstatus = Выходной"
-    return status
+    return " " + status + " "
 
 
 if __name__ == '__main__':
