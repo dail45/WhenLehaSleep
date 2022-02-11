@@ -4,13 +4,11 @@ import os
 import requests
 
 app = Flask(__name__)
+support = datetime.datetime.strptime("01:04:2021", "%d:%m:%Y")
 
-
-@app.route('/')
-def hello_world():
+# @app.route('/')
+def hello_world(d, m, Y, H, M, now):
     status = ""
-    now = datetime.datetime.now() + datetime.timedelta(hours=3)
-    support = datetime.datetime.strptime("01:04:2021", "%d:%m:%Y")
     Y, m, d, H, M = now.strftime("%Y:%m:%d:%H:%M").split(":")
     deltadt = now - support
     delta = int(deltadt.days) % 4 + 1
@@ -51,6 +49,28 @@ def hello_world():
 </h1>
 </body>
 </html>"""
+
+@app.route('/<str:data>')
+def hello_world2(data):
+    status = ""
+    now = datetime.datetime.now() + datetime.timedelta(hours=3)
+    d, m, Y, H, M = now.strftime("%d:%m:%Y:%H:%M").split(":")
+    if not data:
+        return hello_world(d, m, Y, H, M, now)
+    elif data.count(":") == 0:
+        d = data
+        now = now.strptime(f"{d}:{m}:{Y}:{H}:{M}", "%d:%m:%Y:%H:%M")
+        return hello_world(d, m, Y, H, M, now)
+    elif data.count(":") == 1:
+        d, m = data.split(":")
+        now = now.strptime(f"{d}:{m}:{Y}:{H}:{M}", "%d:%m:%Y:%H:%M")
+        return hello_world(d, m, Y, H, M, now)
+    elif data.count(":") == 2:
+        d, m, Y = data.split(":")
+        now = now.strptime(f"{d}:{m}:{Y}:{H}:{M}", "%d:%m:%Y:%H:%M")
+        return hello_world(d, m, Y, H, M, now)
+    else:
+        return hello_world(d, m, Y, H, M, now)
 
 
 if __name__ == '__main__':
