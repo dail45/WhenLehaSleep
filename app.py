@@ -36,16 +36,7 @@ def hello_world():
             status = "Лёха спит(дома).\n" + timeit + "\nstatus = Отсыпной"
     elif delta == 4:
         status = "Лёха дома.\n" + timeit + "\nstatus = Выходной"
-    return f"""<html>
-<head>
-    <title>WhenLehaSleep</title>
-</head>
-<body>
-<h1 align="Center">
-    {status}
-</h1>
-</body>
-</html>"""
+    return status
 
 
 if __name__ == '__main__':
