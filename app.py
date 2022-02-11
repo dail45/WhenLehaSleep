@@ -17,13 +17,13 @@ def hello_world():
     H = int(H)
     if delta == 1:
         if 8 <= H < 20:
-            status = "Лёха на дневной.<br>" + timeit + "<br>status = Дневной"
+            status = "Лёха на дневной.<br>" + timeit + "<br>status = Дневной &#9728"
         elif H < 8:
-            status = "Лёха спит.<br>" + timeit + "<br>status = Дневной"
+            status = "Лёха спит.<br>" + timeit + "<br>status = Дневной &#9728"
         elif 20 <= H < 21:
-            status = "Лёха спешит домой.<br>" + timeit + "<br>status = Дневной"
+            status = "Лёха спешит домой.<br>" + timeit + "<br>status = Дневной &#9728"
         elif H >= 21:
-            status = "Лёха дома.<br>" + timeit + "<br>status = Дневной"
+            status = "Лёха дома.<br>" + timeit + "<br>status = Дневной &#9728"
     elif delta == 2:
         if H < 19:
             status = "Лёха дома.<br>" + timeit + "<br>status = Ночная"
