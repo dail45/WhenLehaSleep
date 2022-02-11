@@ -36,8 +36,7 @@ def hello_world():
             status = "Лёха спит(дома).\n" + timeit + "\nstatus = Отсыпной"
     elif delta == 4:
         status = "Лёха дома.\n" + timeit + "\nstatus = Выходной"
-    return f"<!doctype html>
-<html>
+    return f"""<html>
 <head>
     <title>WhenLehaSleep</title>
 </head>
@@ -46,7 +45,7 @@ def hello_world():
     {status}
 </h1>
 </body>
-</html>"
+</html>"""
 
 
 if __name__ == '__main__':
